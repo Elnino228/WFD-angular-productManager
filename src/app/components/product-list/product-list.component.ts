@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../../models/Product';
-import {ProductService} from '../../services/ProductService';
+import {ProductService} from '../../product.service';
 
 @Component({
   selector: 'app-product-list',
@@ -8,13 +8,17 @@ import {ProductService} from '../../services/ProductService';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  @Input()
   products: Product[];
 
-  constructor() {
+  constructor(private productService: ProductService) {
+    this.products = this.productService.fetchAll();
   }
 
   ngOnInit() {
+  }
+
+  search(keyword) {
+    this.products = this.productService.search(keyword);
   }
 
 

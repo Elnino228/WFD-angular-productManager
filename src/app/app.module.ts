@@ -11,6 +11,7 @@ import { ActionComponent } from './components/action/action.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { NewProductComponent } from './components/new-product/new-product.component';
 import { HeaderComponent } from './header/header.component';
+import { EditProductComponent } from './components/edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HeaderComponent } from './header/header.component';
     ProductDetailComponent,
     ActionComponent,
     NewProductComponent,
-    HeaderComponent
+    HeaderComponent,
+    EditProductComponent
   ],
   imports: [
     BrowserModule,

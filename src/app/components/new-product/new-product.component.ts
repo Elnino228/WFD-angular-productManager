@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Product} from '../../models/Product';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {ProductService} from '../../product.service';
 
 @Component({
   selector: 'app-new-product',
@@ -11,14 +12,13 @@ export class NewProductComponent implements OnInit {
   formProduct: FormGroup;
   product: Product;
 
-  @Output()
-  pressSubmit = new EventEmitter<Product>();
 
-  constructor() {
+  constructor(private productService: ProductService) {
   }
 
   ngOnInit() {
     this.formProduct = new FormGroup({
+      id: new FormControl('', [Validators.required]),
       name: new FormControl('', [Validators.required, Validators.minLength(4)]),
       description: new FormControl('', [Validators.required, Validators.minLength(4)]),
       price: new FormControl('', [Validators.required, Validators.min(0)])
@@ -32,7 +32,7 @@ export class NewProductComponent implements OnInit {
   }
 
   doAdd() {
-    this.pressSubmit.emit(this.product);
+    this.productService.add(this.product);
     this.initProduct();
   }
 

@@ -1,21 +1,21 @@
-<!--<div class="container">-->
-<!--  <app-top-bar></app-top-bar>-->
-<!--  <app-header></app-header>-->
-<!--  <router-outlet></router-outlet>-->
-<!--  <app-foo-bar></app-foo-bar>-->
-<!--</div>-->
 <div class="container">
   <app-top-bar></app-top-bar>
-  <br>
-  <div class="container">
-    <h3>Create new a product:</h3>
-    <app-new-product (pressSubmit)="add($event)"></app-new-product>
-    <br>
-    <app-action actionName="Search" (press)="search($event)"></app-action>
-    <br>
-    <app-product-list [products]="products"></app-product-list>
-    <br>
-  </div>
+  <app-header></app-header>
+  <router-outlet></router-outlet>
   <app-foo-bar></app-foo-bar>
 </div>
+<!--<div class="container">-->
+<!--  <app-top-bar></app-top-bar>-->
+<!--  <br>-->
+<!--  <div class="container">-->
+<!--    <h3>Create new a product:</h3>-->
+<!--    <app-new-product (pressSubmit)="add($event)"></app-new-product>-->
+<!--    <br>-->
+<!--    <app-action actionName="Search" (press)="search($event)"></app-action>-->
+<!--    <br>-->
+<!--    <app-product-list [products]="products"></app-product-list>-->
+<!--    <br>-->
+<!--  </div>-->
+<!--  <app-foo-bar></app-foo-bar>-->
+<!--</div>-->
 

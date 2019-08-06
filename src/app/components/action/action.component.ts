@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {stringify} from 'querystring';
 
 @Component({
   selector: 'app-action',
