@@ -1,0 +1,29 @@
+<div>
+  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#frmProduct">Create</button>
+  <br>
+  <br>
+  <div id="frmProduct" class="collapse" >
+    <form [formGroup]="formProduct" (ngSubmit)="doAdd()">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control"
+             formControlName="name" [(ngModel)]="product.name"
+             name="name" id="name"
+             aria-label="Title" placeholder="name"
+             required minlength="4">
+      <div *ngIf="!fields.name.valid && fields.name.touched" class="alert alert-danger">
+        <p *ngIf="fields.name.errors.required"> Name is required</p>
+        <p *ngIf="fields.name.errors.minlength"> Name is too short</p>
+      </div>
+      <label>Description:</label>
+      <input type="text" class="form-control"
+             formControlName="description" [(ngModel)]="product.description"
+             name="description" aria-label="description" placeholder="description"
+             required minlength="4">
+      <label>Price:</label>
+      <input type="text" class="form-control"
+             formControlName="price" [(ngModel)]="product.price"
+             name="price" aria-label="price" placeholder="price" required min="0">
+      <input data-toggle="collapse" data-target="#frmProduct" type="submit" class="btn btn-success mt-2">
+    </form>
+  </div>
+</div>

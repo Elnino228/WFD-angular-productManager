@@ -6,9 +6,11 @@ import { AppComponent } from './app.component';
 import { TopBarComponent } from './components/top-bar/top-bar.component';
 import { FooBarComponent } from './components/foo-bar/foo-bar.component';
 import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductComponent } from './components/product/product.component';
+import { ProductDetailComponent } from './components/product-detail/product.component';
 import { ActionComponent } from './components/action/action.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NewProductComponent } from './components/new-product/new-product.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +18,16 @@ import {FormsModule} from '@angular/forms';
     TopBarComponent,
     FooBarComponent,
     ProductListComponent,
-    ProductComponent,
-    ActionComponent
+    ProductDetailComponent,
+    ActionComponent,
+    NewProductComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

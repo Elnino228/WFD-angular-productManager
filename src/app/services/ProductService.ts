@@ -1,8 +1,10 @@
-import {IProduct} from '../models/IProduct';
+import {Product} from '../models/Product';
+import {OnInit} from '@angular/core';
 
-export class ProductService {
-  fetchAll(): IProduct[] {
-    return [
+export class ProductService implements OnInit {
+  products: Product[];
+  constructor() {
+    this.products = [
       {
         name: 'Iphone XS',
         description: 'Apple company',
@@ -26,7 +28,20 @@ export class ProductService {
     ];
   }
 
-  search(keyword: string): IProduct[] {
+  ngOnInit(): void {
+  }
+
+
+  fetchAll(): Product[] {
+    return this.products;
+  }
+
+  add(product: Product) {
+    this.products.push(product);
+    console.log(this.products);
+  }
+
+  search(keyword: string): Product[] {
     return this.fetchAll()
       .filter(value => value.name.toLowerCase().indexOf(keyword.trim().toLowerCase()) > -1);
   }

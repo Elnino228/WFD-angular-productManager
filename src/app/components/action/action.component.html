@@ -1,6 +1,7 @@
-<div>
-  <form class="form-inline">
-    <input type="text" class="form-control mr-2" placeholder="{{actionName}}" [(ngModel)]="keyword" name="keyword">
+<div class="row">
+  <form class="form-inline col-md-4 offset-md-8">
+    <label for="name">Search by product name: </label>
+    <input id="name" type="text" class="form-control mr-2" placeholder="{{actionName}}" [(ngModel)]="keyword" name="keyword">
     <button type="button" class="btn btn-success" (click)="doAction()">{{actionName}}</button>
   </form>
 </div>

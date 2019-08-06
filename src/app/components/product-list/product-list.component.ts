@@ -1,5 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import {IProduct} from '../../models/IProduct';
+import {Component, Input, OnInit} from '@angular/core';
+import {Product} from '../../models/Product';
 import {ProductService} from '../../services/ProductService';
 
 @Component({
@@ -8,18 +8,14 @@ import {ProductService} from '../../services/ProductService';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  productService = new ProductService();
-
-  products: IProduct[];
+  @Input()
+  products: Product[];
 
   constructor() {
   }
 
   ngOnInit() {
-    this.products = this.productService.fetchAll();
   }
 
-  search(keyword) {
-    this.products = this.productService.search(keyword);
-  }
+
 }
