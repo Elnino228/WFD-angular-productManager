@@ -6,10 +6,12 @@ import {FeatureModule} from './feature/feature.module';
 import {SharedModule} from './shared/shared.module';
 import {FeatureRouting} from './feature/feature-routing';
 import {ProductService} from './product.service';
+import { LoginComponent } from './feature/login/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,5 @@
 <!--<div class="container">-->
-  <nav class="navbar navbar-expand-sm navbar-light bg-primary">
+  <nav class="navbar navbar-expand-sm navbar-light bg-primary ">
     <a class="navbar-brand" href="#">
       <img class="rounded-circle bg-light" width="40px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png">
       <span class="text-light"> Angular</span>
@@ -12,10 +12,10 @@
 <!--    <div class="collapse navbar-collapse" id="collapsibleNavId">-->
 <!--      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">-->
 <!--        <li class="nav-item active">-->
-<!--&lt;!&ndash;                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>&ndash;&gt;-->
+<!--                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>-->
 <!--        </li>-->
 <!--        <li class="nav-item">-->
-<!--&lt;!&ndash;                  <a class="nav-link" href="#">Link</a>&ndash;&gt;-->
+<!--                  <a class="nav-link" href="#">Link</a>-->
 <!--        </li>-->
 <!--        <li class="nav-item dropdown">-->
 <!--                  <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-toggle="dropdown" aria-haspopup="true"-->
@@ -26,10 +26,16 @@
 <!--                  </div>-->
 <!--        </li>-->
 <!--      </ul>-->
-<!--      &lt;!&ndash;    <form class="form-inline my-2 my-lg-0">&ndash;&gt;-->
-<!--      &lt;!&ndash;      <input class="form-control mr-sm-2" type="text" placeholder="Search">&ndash;&gt;-->
-<!--      &lt;!&ndash;      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>&ndash;&gt;-->
-<!--      &lt;!&ndash;    </form>&ndash;&gt;-->
-<!--    </div>-->
+
+      <form [formGroup]="formLogin" class="form-inline position-absolute" style="right: 20px">
+        <label for="email" class="mr-sm-2 small">Username:</label>
+        <input formControlName="username" [(ngModel)]="user.username" type="email" class="form-control form-control-sm mb-2 mr-sm-2" id="email">
+        <label for="pwd" class="mr-sm-2 small">Password:</label>
+        <input formControlName="password" [(ngModel)]="user.password" type="password" class="form-control form-control-sm mb-2 mr-sm-2 " id="pwd">
+        <button type="submit" class="btn btn-danger btn-sm mb-2 mr-2" (click)="login()">Login</button>
+        <button type="button" class="btn btn-danger btn-sm mb-2 " (click)="logout()">Logout</button>
+      </form>
+
+    <!--    </div>-->
   </nav>
 <!--</div>-->

@@ -4,6 +4,7 @@ import {FooBarComponent} from './foo-bar/foo-bar.component';
 import {HeaderComponent} from './header/header.component';
 import {TopBarComponent} from './top-bar/top-bar.component';
 import {FeatureRouting} from '../feature/feature-routing';
+import {ReactiveFormsModule} from '@angular/forms';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import {FeatureRouting} from '../feature/feature-routing';
   ],
   imports: [
     CommonModule,
-    FeatureRouting
+    FeatureRouting,
+    ReactiveFormsModule
   ],
   exports: [
     FooBarComponent,

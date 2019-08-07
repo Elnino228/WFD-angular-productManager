@@ -7,8 +7,8 @@
       <li class="nav-item btn btn-outline-success mr-2" [class.active]="list.isActive">
         <a class="nav-link" routerLink="list" routerLinkActive #list='routerLinkActive'>List</a>
       </li>
-      <li class="nav-item btn btn-outline-success mr-2" [class.active]="create.isActive">
-        <a class="nav-link" routerLink="create" routerLinkActive #create='routerLinkActive'>Create</a>
+      <li class="nav-item btn btn-outline-success mr-2" [class.active]="create.isActive" >
+        <a class="nav-link" routerLink="create" routerLinkActive #create='routerLinkActive' (click)="check()">Create</a>
       </li>
     </ul>
   </nav>
