@@ -1,37 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { TopBarComponent } from './components/top-bar/top-bar.component';
-import { FooBarComponent } from './components/foo-bar/foo-bar.component';
-import { ProductListComponent } from './components/product-list/product-list.component';
-import { ProductDetailComponent } from './components/product-detail/product.component';
-import { ActionComponent } from './components/action/action.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NewProductComponent } from './components/new-product/new-product.component';
-import { HeaderComponent } from './header/header.component';
-import { EditProductComponent } from './components/edit-product/edit-product.component';
+import {FeatureModule} from './feature/feature.module';
+import {SharedModule} from './shared/shared.module';
+import {FeatureRouting} from './feature/feature-routing';
+import {ProductService} from './product.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopBarComponent,
-    FooBarComponent,
-    ProductListComponent,
-    ProductDetailComponent,
-    ActionComponent,
-    NewProductComponent,
-    HeaderComponent,
-    EditProductComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    FeatureModule,
+    SharedModule,
+    FeatureRouting
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

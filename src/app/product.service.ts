@@ -1,10 +1,9 @@
 import {Injectable} from '@angular/core';
-import {Product} from './models/Product';
+import {Product} from './core/models/Product';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({providedIn: 'root'})
 export class ProductService {
+  rnd: number;
   products: Product[] = [{
     id: 1,
     name: 'Iphone XS',
@@ -31,6 +30,7 @@ export class ProductService {
     }];
 
   constructor() {
+    this.rnd = Math.round(Math.random() * 100);
   }
 
   fetchAll(): Product[] {
